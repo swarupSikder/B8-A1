@@ -54,6 +54,21 @@ let concatenateArrays = (...args) => {
     }
     return total;
 };
-console.log(concatenateArrays(["a", "b"], ["c", "d"]));
-console.log(concatenateArrays([1, 2], [3, 4], [5]));
+let getPopularCourses = (x, minStudents) => {
+    let newX = [];
+    x.map(c => {
+        if (c.isPublished && c.students >= minStudents) {
+            newX.push(c);
+        }
+    });
+    return newX;
+};
 export {};
+// const courses = [
+//   { title: "TypeScript Mastery", students: 120, isPublished: true },
+//   { title: "Draft Course", students: 200, isPublished: false },
+//   { title: "Basic HTML", students: 45, isPublished: true },
+//   { title: "Next.js Pro", students: 85, isPublished: true }
+// ];
+// console.log(getPopularCourses(courses, 80));
+// console.log(courses);
