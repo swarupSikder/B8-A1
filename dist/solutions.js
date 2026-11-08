@@ -32,8 +32,16 @@ let processInput = (val) => {
         return "Inactive";
     }
 };
-export {};
 // console.log(processInput("  TypeScript  "));
 // console.log(processInput(7));
 // console.log(processInput(true));
 // console.log(processInput(false));
+//--------------------//
+//    Solution (3)    //
+//--------------------//
+let formatCoordinate = ([latitude, longitude, locationName]) => {
+    return `Location: ${locationName} (${latitude}, ${longitude})`;
+};
+export {};
+// console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
+// console.log(formatCoordinate([22.35, 91.78, "Chittagong"]));
