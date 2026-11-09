@@ -1,6 +1,3 @@
-//--------------------//
-//    Solution (1)    //
-//--------------------//
 let multiplyValue =(x:number, y?:number)=>{
     if(y==0){
         return 0;
@@ -15,17 +12,7 @@ let multiplyValue =(x:number, y?:number)=>{
     }
 }
 
-// console.log(multiplyValue(10));
-// console.log(multiplyValue(10,5));
-// console.log(multiplyValue(7,0));
 
-
-
-
-
-//--------------------//
-//    Solution (2)    //
-//--------------------//
 let processInput = (val: string | number | boolean) => {
     if(typeof val == "string"){
         return val.trim().toLowerCase();
@@ -41,29 +28,7 @@ let processInput = (val: string | number | boolean) => {
     }
 }
 
-// console.log(processInput("  TypeScript  "));
-// console.log(processInput(7));
-// console.log(processInput(true));
-// console.log(processInput(false));
 
-
-//--------------------//
-//    Solution (3)    //
-//--------------------//
-let formatCoordinate = ([latitude, longitude, locationName] : readonly [number, number, string]) => {
-    return `Location: ${locationName} (${latitude}, ${longitude})`;
-}
-
-// console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
-// console.log(formatCoordinate([22.35, 91.78, "Chittagong"]));
-
-
-
-
-
-//--------------------//
-//    Solution (4)    //
-//--------------------//
 let concatenateArrays = <T>(...args: T[][]) : T[] => {
     let total: T[] = [];
 
@@ -74,16 +39,7 @@ let concatenateArrays = <T>(...args: T[][]) : T[] => {
     return total;
 }
 
-// console.log(concatenateArrays(["a", "b"], ["c", "d"]));
-// console.log(concatenateArrays([1, 2], [3, 4], [5]));
 
-
-
-
-
-//--------------------//
-//    Solution (5)    //
-//--------------------//
 interface Course {
     title : string,
     students : number,
@@ -100,23 +56,7 @@ let getPopularCourses = (x : Array<Course>, minStudents : number) => {
     return newX;
 }
 
-// const courses = [
-//   { title: "TypeScript Mastery", students: 120, isPublished: true },
-//   { title: "Draft Course", students: 200, isPublished: false },
-//   { title: "Basic HTML", students: 45, isPublished: true },
-//   { title: "Next.js Pro", students: 85, isPublished: true }
-// ];
 
-// console.log(getPopularCourses(courses, 80));
-// console.log(courses);
-
-
-
-
-
-//--------------------//
-//    Solution (6)    //
-//--------------------//
 let pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
     let result: T[K][] = [];
 
@@ -127,21 +67,7 @@ let pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
     return result;
 }
 
-const users = [
-  { id: 1, name: "Rakib", role: "Admin" },
-  { id: 2, name: "Sadia", role: "Editor" },
-  { id: 3, name: "Tariq", role: "Subscriber" }
-];
 
-// console.log(pluckValues(users, "name"));
-// console.log(pluckValues(users, "id"));
-
-
-
-
-//--------------------//
-//    Solution (7)    //
-//--------------------//
 class Employee {
     constructor(
         protected name : string, 
@@ -166,32 +92,15 @@ class Manager extends Employee {
     }
 }
 
-// const manager = new Manager("Alice", 50000, "Engineering");
-// console.log(manager.getDetails());
-// console.log(manager.getRoleInfo());
 
-
-
-//--------------------//
-//    Solution (8)    //
-//--------------------//
 let validateAgeAsync = async(age : number) : Promise<string> => {
-    return new Promise((resolve, reject) => {
+    return new Promise<string>((resolve, reject) => {
         age >= 18 ? setTimeout(()=> {
             resolve("Access Granted")
         }, 1000) : 
         reject(new Error("Access Denied: Must be 18 or older")); 
+    })
+    .catch(error => {
+        return error.message;
     });
 }
-
-// console.log(await validateAgeAsync(20));
-// console.log(await validateAgeAsync(15));
-
-// Test
-validateAgeAsync(18)
-    .then(result => console.log(result))
-    .catch(error => console.log(error.message));
-
-// validateAgeAsync(20)
-//     .then(result => console.log(result))
-//     .catch(error => console.log(error.message));

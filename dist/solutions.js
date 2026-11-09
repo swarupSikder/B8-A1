@@ -1,6 +1,3 @@
-//--------------------//
-//    Solution (1)    //
-//--------------------//
 let multiplyValue = (x, y) => {
     if (y == 0) {
         return 0;
@@ -12,12 +9,6 @@ let multiplyValue = (x, y) => {
         return x * 2;
     }
 };
-// console.log(multiplyValue(10));
-// console.log(multiplyValue(10,5));
-// console.log(multiplyValue(7,0));
-//--------------------//
-//    Solution (2)    //
-//--------------------//
 let processInput = (val) => {
     if (typeof val == "string") {
         return val.trim().toLowerCase();
@@ -32,21 +23,6 @@ let processInput = (val) => {
         return "Inactive";
     }
 };
-// console.log(processInput("  TypeScript  "));
-// console.log(processInput(7));
-// console.log(processInput(true));
-// console.log(processInput(false));
-//--------------------//
-//    Solution (3)    //
-//--------------------//
-let formatCoordinate = ([latitude, longitude, locationName]) => {
-    return `Location: ${locationName} (${latitude}, ${longitude})`;
-};
-// console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
-// console.log(formatCoordinate([22.35, 91.78, "Chittagong"]));
-//--------------------//
-//    Solution (4)    //
-//--------------------//
 let concatenateArrays = (...args) => {
     let total = [];
     for (let arg of args) {
@@ -63,17 +39,6 @@ let getPopularCourses = (x, minStudents) => {
     });
     return newX;
 };
-// const courses = [
-//   { title: "TypeScript Mastery", students: 120, isPublished: true },
-//   { title: "Draft Course", students: 200, isPublished: false },
-//   { title: "Basic HTML", students: 45, isPublished: true },
-//   { title: "Next.js Pro", students: 85, isPublished: true }
-// ];
-// console.log(getPopularCourses(courses, 80));
-// console.log(courses);
-//--------------------//
-//    Solution (6)    //
-//--------------------//
 let pluckValues = (items, key) => {
     let result = [];
     items.map(item => {
@@ -81,16 +46,6 @@ let pluckValues = (items, key) => {
     });
     return result;
 };
-const users = [
-    { id: 1, name: "Rakib", role: "Admin" },
-    { id: 2, name: "Sadia", role: "Editor" },
-    { id: 3, name: "Tariq", role: "Subscriber" }
-];
-// console.log(pluckValues(users, "name"));
-// console.log(pluckValues(users, "id"));
-//--------------------//
-//    Solution (7)    //
-//--------------------//
 class Employee {
     name;
     baseSalary;
@@ -112,27 +67,15 @@ class Manager extends Employee {
         return `Manager of ${this.department}: ${this.name}`;
     };
 }
-// const manager = new Manager("Alice", 50000, "Engineering");
-// console.log(manager.getDetails());
-// console.log(manager.getRoleInfo());
-//--------------------//
-//    Solution (8)    //
-//--------------------//
 let validateAgeAsync = async (age) => {
     return new Promise((resolve, reject) => {
         age >= 18 ? setTimeout(() => {
             resolve("Access Granted");
         }, 1000) :
             reject(new Error("Access Denied: Must be 18 or older"));
+    })
+        .catch(error => {
+        return error.message;
     });
 };
-// console.log(await validateAgeAsync(20));
-// console.log(await validateAgeAsync(15));
-// Test
-validateAgeAsync(18)
-    .then(result => console.log(result))
-    .catch(error => console.log(error.message));
 export {};
-// validateAgeAsync(20)
-//     .then(result => console.log(result))
-//     .catch(error => console.log(error.message));
