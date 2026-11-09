@@ -112,7 +112,27 @@ class Manager extends Employee {
         return `Manager of ${this.department}: ${this.name}`;
     };
 }
-export {};
 // const manager = new Manager("Alice", 50000, "Engineering");
 // console.log(manager.getDetails());
 // console.log(manager.getRoleInfo());
+//--------------------//
+//    Solution (8)    //
+//--------------------//
+let validateAgeAsync = async (age) => {
+    return new Promise((resolve, reject) => {
+        age >= 18 ? setTimeout(() => {
+            resolve("Access Granted");
+        }, 1000) :
+            reject(new Error("Access Denied: Must be 18 or older"));
+    });
+};
+// console.log(await validateAgeAsync(20));
+// console.log(await validateAgeAsync(15));
+// Test
+validateAgeAsync(18)
+    .then(result => console.log(result))
+    .catch(error => console.log(error.message));
+export {};
+// validateAgeAsync(20)
+//     .then(result => console.log(result))
+//     .catch(error => console.log(error.message));
