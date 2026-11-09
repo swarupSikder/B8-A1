@@ -5,16 +5,10 @@ This project contains solutions to 8 TypeScript programming problems and 2 techn
 
 ## Project Structure
 B8-A1
-├── dist/
-│   └── solutions.js
-├── src/
-│   ├── solutions.ts
-│   ├── typescript-access-modifiers.md
-│   └── union-intersection.md
-├── .gitignore
-├── index.html
-├── README.md
-└── tsconfig.json
+├── solutions.ts
+├── typescript-access-modifiers.md
+├── union-intersection.md
+└── README.md
 
 ## Problem Solutions
 The `solutions.ts` file contains solutions to the following problems:
