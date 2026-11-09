@@ -8,12 +8,12 @@ B8-A1
 ├── dist/
 │   └── solutions.js
 ├── src/
-│   ├── README.md
 │   ├── solutions.ts
 │   ├── typescript-access-modifiers.md
 │   └── union-intersection.md
 ├── .gitignore
 ├── index.html
+├── README.md
 └── tsconfig.json
 
 ## Problem Solutions
