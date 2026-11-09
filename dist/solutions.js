@@ -63,7 +63,6 @@ let getPopularCourses = (x, minStudents) => {
     });
     return newX;
 };
-export {};
 // const courses = [
 //   { title: "TypeScript Mastery", students: 120, isPublished: true },
 //   { title: "Draft Course", students: 200, isPublished: false },
@@ -72,3 +71,21 @@ export {};
 // ];
 // console.log(getPopularCourses(courses, 80));
 // console.log(courses);
+//--------------------//
+//    Solution (6)    //
+//--------------------//
+let pluckValues = (items, key) => {
+    let result = [];
+    items.map(item => {
+        result.push(item[key]);
+    });
+    return result;
+};
+const users = [
+    { id: 1, name: "Rakib", role: "Admin" },
+    { id: 2, name: "Sadia", role: "Editor" },
+    { id: 3, name: "Tariq", role: "Subscriber" }
+];
+export {};
+// console.log(pluckValues(users, "name"));
+// console.log(pluckValues(users, "id"));

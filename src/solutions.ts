@@ -109,3 +109,29 @@ let getPopularCourses = (x : Array<Course>, minStudents : number) => {
 
 // console.log(getPopularCourses(courses, 80));
 // console.log(courses);
+
+
+
+
+
+//--------------------//
+//    Solution (6)    //
+//--------------------//
+let pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
+    let result: T[K][] = [];
+
+    items.map(item => {
+        result.push(item[key]);
+    });
+
+    return result;
+}
+
+const users = [
+  { id: 1, name: "Rakib", role: "Admin" },
+  { id: 2, name: "Sadia", role: "Editor" },
+  { id: 3, name: "Tariq", role: "Subscriber" }
+];
+
+// console.log(pluckValues(users, "name"));
+// console.log(pluckValues(users, "id"));
